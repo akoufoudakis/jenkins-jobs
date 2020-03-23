@@ -1,10 +1,12 @@
 job("Seed Job") {
   parameters{
-    stringParam('URL', '');
+    stringParam('URL', '')
   }
 
+  String params = ${URL}
+
   steps {
-    shell('echo bye')
+    shell('echo ${params}')
   }
 
 }
