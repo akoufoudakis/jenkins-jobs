@@ -1,6 +1,9 @@
 job("Seed Job") {
   parameters{
-    stringParam('URL', '')
+    string(
+      name: 'URL',
+      description: 'URL of the repository'
+    )
   }
 
   steps {
