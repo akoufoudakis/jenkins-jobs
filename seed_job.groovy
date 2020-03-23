@@ -3,10 +3,8 @@ job("Seed Job") {
     stringParam('URL', '')
   }
 
-  String params = ${URL}
-
   steps {
-    shell('echo ${params}')
+    shell('echo ${URL}')
   }
 
 }
