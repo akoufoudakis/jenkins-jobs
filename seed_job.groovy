@@ -4,12 +4,12 @@ job("Created Job") {
   }
 
   environmentVariables {
-    groovy(
+    groovy('''
        def map = [:]
        String url = '$URL'
        map.put("PARAM", url)
        return map
-    )
+    ''')
   }
 
   steps {
