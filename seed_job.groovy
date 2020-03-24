@@ -1,6 +1,6 @@
 job("Created Job") {
   parameters {
-    stringParam('URL')
+    stringParam('URL', '', 'Repository URL')
   }
 
   environmentVariables {
