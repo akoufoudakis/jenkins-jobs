@@ -3,8 +3,10 @@ job("Created Job") {
     stringParam('URL')
   }
 
+  String param = '$URL'
+
   steps {
-    shell('echo ${URL}')
+    shell('echo $param')
   }
 
 }
