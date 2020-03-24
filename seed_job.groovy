@@ -6,8 +6,8 @@ job("Created Job") {
   environmentVariables {
     groovy(
        def map = [:]
-       String param = '$URL'
-       map.put("PARAM", param)
+       String url = '$URL'
+       map.put("PARAM", url)
        return map
     )
   }
