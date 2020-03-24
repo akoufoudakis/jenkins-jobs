@@ -5,14 +5,15 @@ job("Created Job") {
 
   environmentVariables {
     groovy(
-      '
-        String param = '$URL'.trim()
-      '
+      '''
+          String param = '$URL'.trim()
+          return [PARAM: param]
+      '''
     )
   }
 
   steps {
-    shell('echo $param')
+    shell('echo $PARAM')
   }
 
 }
