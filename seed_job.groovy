@@ -5,9 +5,9 @@ job("Created Job") {
 
   environmentVariables {
     groovy(
-      '''
+      '
         String param = '$URL'.trim()
-      '''
+      '
     )
   }
 
