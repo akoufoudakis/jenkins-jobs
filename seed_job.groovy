@@ -3,7 +3,13 @@ job("Created Job") {
     stringParam('URL')
   }
 
-  String param = '$URL'
+  environmentVariables {
+    groovy(
+      '''
+        String $param = '$URL'.trim()
+      '''
+    )
+  }
 
   steps {
     shell('echo $param')
