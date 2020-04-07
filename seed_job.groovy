@@ -1,3 +1,6 @@
+def project = ""
+
+
 matrixJob("matrix-job-${project}") {
 
 axes {
@@ -5,6 +8,7 @@ axes {
  }
 
   parameters {
+    stringParam('project', '', 'The name of the project to be scanned')
     stringParam('URL', '', 'Repository URL')
   }
 
