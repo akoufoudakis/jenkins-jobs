@@ -31,6 +31,7 @@ for (repo in repoList) {
         }
     }
 }
+parallel branches
 '''
 
 pipelineJob("parallel source clear scanning") {
@@ -41,8 +42,6 @@ pipelineJob("parallel source clear scanning") {
     }
   }
 }
-
-parallel branches
 
 job("matrix-job-${project}") {
 
