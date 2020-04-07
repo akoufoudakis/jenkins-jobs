@@ -3,6 +3,8 @@ def project = ""
 def repoList = []
 def prefix = 'https://www.github.com/kiegroup'
 
+def scanPipeline =
+'''
 node('master') {
    stage('Read file') { // for display purposes
       repoList.add('drools')
@@ -28,6 +30,16 @@ for (repo in repoList) {
             }
         }
     }
+}
+'''
+
+pipelineJob("parallel source clear scanning") {
+  definition {
+    cps {
+      script("${scanPipeline}")
+      sandbox()
+    }
+  }
 }
 
 parallel branches
