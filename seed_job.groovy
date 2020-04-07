@@ -1,19 +1,16 @@
-job("Created Job") {
+matrixJob("${project}-matrix-job") {
+
+axes {
+     labelExpression("label-exp","master")
+ }
+
   parameters {
     stringParam('URL', '', 'Repository URL')
   }
 
-  environmentVariables {
-    groovy('''
-       def map = [:]
-       String url = '$URL'
-       map.put("PARAM", url)
-       return map
-    ''')
-  }
 
   steps {
-    shell('echo $PARAM')
+    shell('echo "${URL}"')
   }
 
 }
