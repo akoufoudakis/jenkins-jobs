@@ -52,7 +52,7 @@ job("matrix-job-${project}") {
 
 
   steps {
-    shell('echo "${URL}/" + '' + "${project}"')
+    shell('echo "${URL}/" + "${project}"')
   }
 
 }
