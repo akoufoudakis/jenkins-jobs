@@ -1,4 +1,4 @@
-matrixJob("${project}-matrix-job") {
+matrixJob("matrix-job-${project}") {
 
 axes {
      labelExpression("label-exp","master")
