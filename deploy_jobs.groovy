@@ -2,7 +2,7 @@ def repoList = []
 
 configFileProvider([configFile(fileId: '9018a8b6-f91d-4da6-9007-03f68830e118', variable:'repoListFile')]) {
   def repoFile = readFile "$repoListFile"
-  def repoList = repoFile.readLines()
+  repoList = repoFile.readLines()
 
 }
 
