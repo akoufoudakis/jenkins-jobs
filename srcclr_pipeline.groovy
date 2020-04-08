@@ -35,11 +35,6 @@ parallel branches
 
 pipelineJob("parallel source clear scanning") {
 
-
-  agents {
-    label('master')
-  }
-
   description("This is a pipeline, which runs source clear scanning jobs")
 
   parameters {
