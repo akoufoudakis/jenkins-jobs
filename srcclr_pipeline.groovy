@@ -1,3 +1,4 @@
+
 def scanPipeline =
 '''
 def repoList = []
@@ -35,7 +36,7 @@ parallel branches
 pipelineJob("parallel source clear scanning") {
 
 
-  agent {
+  agents {
     label('master')
   }
 
