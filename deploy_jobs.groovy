@@ -1,5 +1,9 @@
+def repoList = ['lienzo-core',
+                'lienzo-tests']
 
-job("srcclr-scan") {
+for(repo in repoList) {
+  def jobName = 'srcclr/scan' + "${repo}"
+  job(jobName) {
     parameters {
       stringParam('URL', '', 'Repository URL')
     }
@@ -7,4 +11,6 @@ job("srcclr-scan") {
     steps {
       shell('echo "${URL}"')
     }
+
+  }
 }
