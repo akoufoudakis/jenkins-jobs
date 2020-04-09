@@ -1,8 +1,8 @@
 job("generateJobs") {
   def repoFilePath = "./repos.txt"
-  def repoFile = readFile repoFilePath
-  def repoList = repoFile.readLines
-  for(repo in repoList) {
+  def repoFile = readFileFromWorkspace(repoFilePath);
+  /*def repoList = repoFile.readLines*/
+  /*for(repo in repoList) {
     def jobName = 'srcclr/scan-' + "${repo}"
     job(jobName) {
       parameters {
@@ -14,5 +14,8 @@ job("generateJobs") {
       }
 
     }
+  }*/
+  job("simpleJob") {
+    shell('echo "${repoFile}"')
   }
 }
