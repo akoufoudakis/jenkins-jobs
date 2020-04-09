@@ -1,4 +1,4 @@
-def repoFilePath = "repo_bootstrap/repo-list.txt"
+def repoFilePath = "repo_bootstrap/scripts/repo-list.txt"
 def repoFile = readFileFromWorkspace(repoFilePath);
 def repoList = repoFile.split()
 for(repo in repoList) {
