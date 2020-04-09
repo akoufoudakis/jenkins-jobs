@@ -7,10 +7,14 @@ job("generateJobs") {
         url('https://github.com/akoufoudakis/repo_bootstrap')
       }
       branch('master')
+      extensions {
+        cleanAfterCheckout()
+        relativeTargetDirectory('repo_bootstrap')
+      }
     }
   }
 
-  def repoFilePath = "./repo-list.txt"
+  def repoFilePath = "./repo_bootstrap/repo-list.txt"
   def repoFile = readFileFromWorkspace(repoFilePath);
   def repoList = repoFile.split()
   for(repo in repoList) {
