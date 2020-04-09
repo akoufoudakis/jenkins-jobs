@@ -1,2 +1,0 @@
-lienzo-core
-lienzo-test
