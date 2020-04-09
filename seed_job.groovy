@@ -9,7 +9,6 @@ node('master') {
    stage('Read file') { // for display purposes
       repoList.add('drools')
       repoList.add('lienzo-core')
-      repoList.add('lienzo-test')
    }
 }
 
@@ -41,18 +40,4 @@ pipelineJob("parallel source clear scanning") {
       sandbox()
     }
   }
-}
-
-job("matrix-job-${project}") {
-
-  parameters {
-    stringParam('project', '', 'The name of the project to be scanned')
-    stringParam('URL', '', 'Repository URL')
-  }
-
-
-  steps {
-    shell('echo "${URL}/" + "${project}"')
-  }
-
 }
