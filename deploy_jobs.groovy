@@ -1,5 +1,16 @@
 job("generateJobs") {
-  def repoFilePath = "./repos.txt"
+
+  scm {
+    git {
+      remote {
+        name('origin')
+        url('https://github.com/project-ncl/sourceclear-invoker')
+      }
+      branch('master')
+    }
+  }
+  
+  def repoFilePath = "repo-list.txt"
   def repoFile = readFileFromWorkspace(repoFilePath);
   def repoList = repoFile.split()
   for(repo in repoList) {
