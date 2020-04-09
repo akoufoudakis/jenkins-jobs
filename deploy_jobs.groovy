@@ -16,6 +16,8 @@ job("generateJobs") {
     }
   }*/
   job("simpleJob") {
+   steps{
     shell('echo "${repoFile}"')
+    }
   }
 }
