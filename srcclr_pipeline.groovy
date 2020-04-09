@@ -6,10 +6,10 @@ def prefix = 'https://www.github.com/kiegroup/'
 
 node {
    stage('Read repo file') {
-      configFileProvider([configFile(fileId: '9018a8b6-f91d-4da6-9007-03f68830e118', variable:'repoListFile')]) {
-        def repoFile = readFile "$repoListFile"
-        repoList = repoFile.readLines()
-      }
+      git url: 'https://github.com/akoufoudakis/repo_bootstrap', branch: 'master'
+      def repoListFilePath = './scripts/repo-list.txt'
+      def repoListFile = readFile repoListFilePath
+      repoList = repoListFile.readLines()
    }
 }
 
@@ -17,7 +17,6 @@ def branches = [:]
 
 for (repo in repoList) {
     def branchName = 'Source Clear ' + "${repo}"
-    println 'Repo before node ' + "${repo}"
     def repoName = "${repo}"
     branches[branchName] = {
         node {
