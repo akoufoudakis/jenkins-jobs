@@ -1,4 +1,4 @@
-def foo = "${env.BAR}"
+def foo = ${env.BAR}
 def repoFilePath = "repo_bootstrap/scripts/repo-list.txt"
 def repoFile = readFileFromWorkspace(repoFilePath);
 def repoList = repoFile.split()
