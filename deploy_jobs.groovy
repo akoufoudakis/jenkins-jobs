@@ -1,4 +1,5 @@
 def foo = binding.variables.get("BAR")
+println "${foo}"
 def repoFilePath = "repo_bootstrap/scripts/repo-list.txt"
 def repoFile = readFileFromWorkspace(repoFilePath);
 def repoList = repoFile.split()
