@@ -1,4 +1,4 @@
-def foo = build.environment.get("BAR")
+def foo = binding.variables.get("BAR")
 def repoFilePath = "repo_bootstrap/scripts/repo-list.txt"
 def repoFile = readFileFromWorkspace(repoFilePath);
 def repoList = repoFile.split()
